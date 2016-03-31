@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Pm8-34-wiM">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="WAb-Th-AFa">
+            <objects>
+                <viewController id="Eln-Tj-ht0" customClass="ViewController" customModule="Eruditus" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="6Jg-GZ-ptn"/>
+                        <viewControllerLayoutGuide type="bottom" id="puI-r6-kAd"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Uhz-xQ-NyU">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p0y-Ic-wmW">
+                                <rect key="frame" x="135" y="189" width="38" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="38" id="Py3-cu-ruz"/>
+                                    <constraint firstAttribute="height" constant="30" id="RfV-M2-UYx"/>
+                                </constraints>
+                                <state key="normal" title="Login">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="loginButtonAction:" destination="Eln-Tj-ht0" eventType="touchUpInside" id="chA-tt-3PV"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6wF-OI-XC4">
+                                <rect key="frame" x="138" y="265" width="54" height="30"/>
+                                <state key="normal" title="settings">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="settingsbuttonAction:" destination="Eln-Tj-ht0" eventType="touchUpInside" id="spV-Dl-Iq9"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fVM-Ds-jGx">
+                                <rect key="frame" x="138" y="227" width="44" height="30"/>
+                                <state key="normal" title="Profile">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="profileButtonAction:" destination="Eln-Tj-ht0" eventType="touchUpInside" id="fPg-PC-fV9"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yDG-Zs-a2A">
+                                <rect key="frame" x="135" y="151" width="80" height="30"/>
+                                <state key="normal" title="View Profile">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="viewProfileButtonAction:" destination="Eln-Tj-ht0" eventType="touchUpInside" id="a8s-ga-Vx7"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0LC-V1-Acd">
+                                <rect key="frame" x="135" y="303" width="46" height="30"/>
+                                <state key="normal" title="Poll">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="pollRequest:" destination="Eln-Tj-ht0" eventType="touchUpInside" id="4bS-ye-K5D"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="yDG-Zs-a2A" firstAttribute="leading" secondItem="p0y-Ic-wmW" secondAttribute="leading" id="0Yt-xH-Yao"/>
+                            <constraint firstItem="fVM-Ds-jGx" firstAttribute="leading" secondItem="0LC-V1-Acd" secondAttribute="leading" constant="3" id="5fh-3g-UFj"/>
+                            <constraint firstItem="p0y-Ic-wmW" firstAttribute="top" secondItem="yDG-Zs-a2A" secondAttribute="bottom" constant="8" id="7Ds-WX-cgg"/>
+                            <constraint firstItem="fVM-Ds-jGx" firstAttribute="top" secondItem="p0y-Ic-wmW" secondAttribute="bottom" constant="8" id="QPE-Bb-ceu"/>
+                            <constraint firstItem="6wF-OI-XC4" firstAttribute="top" secondItem="fVM-Ds-jGx" secondAttribute="bottom" constant="8" id="UCR-Eo-qFs"/>
+                            <constraint firstItem="fVM-Ds-jGx" firstAttribute="leading" secondItem="6wF-OI-XC4" secondAttribute="leading" id="erh-UQ-Kw7"/>
+                            <constraint firstItem="fVM-Ds-jGx" firstAttribute="centerX" secondItem="0LC-V1-Acd" secondAttribute="centerX" constant="2" id="j5y-R5-31L"/>
+                            <constraint firstItem="fVM-Ds-jGx" firstAttribute="leading" secondItem="p0y-Ic-wmW" secondAttribute="leading" constant="3" id="jHk-Lf-Mih"/>
+                            <constraint firstAttribute="centerY" secondItem="fVM-Ds-jGx" secondAttribute="centerY" constant="42" id="s2l-Xl-xsC"/>
+                            <constraint firstItem="0LC-V1-Acd" firstAttribute="top" secondItem="6wF-OI-XC4" secondAttribute="bottom" constant="8" symbolic="YES" id="sJw-TG-hzd"/>
+                            <constraint firstAttribute="centerX" secondItem="fVM-Ds-jGx" secondAttribute="centerX" id="x0U-5e-eQc"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="iF2-K0-z0K"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Pgd-GV-hEP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="881" y="262"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="OAI-Xk-pDC">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Pm8-34-wiM" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="xSw-i3-TUO">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Eln-Tj-ht0" kind="relationship" relationship="rootViewController" id="v8K-ee-cer"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HY2-Kf-lWB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="349" y="262"/>
+        </scene>
+    </scenes>
+</document>

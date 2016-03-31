@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="9525" systemVersion="14F27" minimumToolsVersion="Xcode 4.3">
+    <entity name="Chat" representedClassName="Chat" syncable="YES">
+        <attribute name="assetPath" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="attachmentID" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="attachmentType" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="attachmentUrl" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="chatID" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="chatText" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="customParameter" optional="YES" attributeType="Transformable" syncable="YES"/>
+        <attribute name="dateTime" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="dialogID" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="fileContentType" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="fileName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="isAttachmentExists" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="mediaType" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="recipientID" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="senderID" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="sent" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="thumbNail" optional="YES" attributeType="Binary" allowsExternalBinaryDataStorage="YES" syncable="YES"/>
+        <relationship name="dialogs" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Dialog" inverseName="chat" inverseEntity="Dialog" syncable="YES"/>
+        <relationship name="users" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Users" inverseName="chats" inverseEntity="Users" syncable="YES"/>
+        <fetchedProperty name="fetchedProperty" optional="YES" syncable="YES">
+            <fetchRequest name="fetchedPropertyFetchRequest" entity="Chat"/>
+        </fetchedProperty>
+    </entity>
+    <entity name="Dialog" representedClassName="Dialog" syncable="YES">
+        <attribute name="dialogID" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="read" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <relationship name="chat" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Chat" inverseName="dialogs" inverseEntity="Chat" syncable="YES"/>
+    </entity>
+    <entity name="FrozenPost" representedClassName="FrozenPost" syncable="YES">
+        <attribute name="endDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="longDesc" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="postId" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="shortDesc" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="Home" representedClassName="Home" syncable="YES">
+        <attribute name="chatRoom" optional="YES" attributeType="Transformable" valueTransformerName="chatRoomTransformable" syncable="YES"/>
+        <attribute name="dialogID" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="dialogOwner" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="lastMessageText" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="lastMessageTimeStamp" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="occupantIDs" optional="YES" attributeType="Transformable" syncable="YES"/>
+        <attribute name="participantImages" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="participantPhotoUrl" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="participants" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="pollDescription" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="pollTitle" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="priority" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="recepientID" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="roomJID" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="type" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="unreadMessageCount" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+    </entity>
+    <entity name="Poll" syncable="YES">
+        <attribute name="circleId" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="imageURL" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="pollDescription" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="pollId" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="PollAnswer" syncable="YES">
+        <attribute name="answerId" optional="YES" attributeType="Integer 64" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="count" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="surveyId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="text" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="PollAnswers" representedClassName="PollAnswers" syncable="YES">
+        <attribute name="answer" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="answerCount" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="answerId" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="surveyId" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+    </entity>
+    <entity name="PollInfo" representedClassName="PollInfo" syncable="YES">
+        <attribute name="answerId" optional="YES" attributeType="Integer 64" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="image" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="polldescription" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="pollID" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="type" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="userId" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+    </entity>
+    <entity name="SupportInfo" syncable="YES">
+        <attribute name="infoText" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="infoType" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+    </entity>
+    <entity name="Users" representedClassName="Users" syncable="YES">
+        <attribute name="address1" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="address2" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="city" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="company" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="country" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="coverUrl" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="designation" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="dob" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="education" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="emailID" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="firstname" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="gender" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="hobbies" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="industry" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="language" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="lastName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="pg" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="phd" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="plus2" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="profileUrl" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="qbID" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="role" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="school" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="ug" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="universityID" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="universityName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="userID" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="userName" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="chats" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Chat" inverseName="users" inverseEntity="Chat" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Chat" positionX="-567" positionY="-450" width="128" height="359"/>
+        <element name="Dialog" positionX="-63" positionY="54" width="128" height="88"/>
+        <element name="FrozenPost" positionX="-639" positionY="-288" width="128" height="105"/>
+        <element name="Home" positionX="-857" positionY="-108" width="128" height="300"/>
+        <element name="Poll" positionX="-657" positionY="-306" width="128" height="135"/>
+        <element name="PollAnswer" positionX="-648" positionY="-297" width="128" height="105"/>
+        <element name="PollAnswers" positionX="-630" positionY="-279" width="128" height="105"/>
+        <element name="PollInfo" positionX="-648" positionY="-297" width="128" height="148"/>
+        <element name="SupportInfo" positionX="-657" positionY="-306" width="128" height="75"/>
+        <element name="Users" positionX="-533" positionY="59" width="128" height="480"/>
+    </elements>
+</model>
